@@ -1,0 +1,23 @@
+apply plugin: "java"
+apply plugin: "application"
+
+mainClassName = "ru.cbr.buhot.installer.Main"
+
+sourceCompatibility = JavaVersion.VERSION_1_7
+targetCompatibility = JavaVersion.VERSION_1_7
+
+repositories {
+	mavenCentral()
+}
+
+jar {
+	manifest.attributes("Main-Class": mainClassName);
+}
+
+run{
+	standardInput=System.in
+}
+
+task wrapper(type: Wrapper) {
+	gradleVersion = "1.12"
+}
